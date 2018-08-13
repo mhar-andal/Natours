@@ -1,0 +1,106 @@
+.btn {
+  /* moves button up */
+  &:link,
+  &:visited { /* psuedo class is used to style elements in a special state */
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block; /* it is an inline element, lets make it a inline-block so the box model works as if it was a normal block element, we should do this if we wanna give padding heights  */
+    border-radius: 10rem;
+    transition: all .2s; /* time length for transforms */
+    position: relative;
+    font-size: $default-font-size;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black, .2); /* x, y, blur, opacity */
+    
+    &::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+  }
+
+  /* moves button down on click */
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2); /* x, y, blur, opacity */
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  &::after { /* AFTER ADDS AN ELEMENT */
+    content: ''; /* ALWAYS NECESSARY TO APPEAR */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    /* putting behind the button */
+    position: absolute; /* absolute needs a reference */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+    
+  &--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; /* this will auto apply styles of 0% before the animation starts */
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    transform: translate(0);
+  }
+}
+
+// .btn-text {
+//   &:link,
+//   &:visited {
+
+//   }
+
+//   &:hover {
+
+//   }
+
+//   &:active {
+
+//   }
+// }

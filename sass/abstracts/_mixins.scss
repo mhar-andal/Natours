@@ -1,0 +1,7 @@
+@mixin clearfix {
+  &::after {
+    content: ''; // needed for after psuedo element
+    display: table;
+    clear: both;
+  }
+}

@@ -1,0 +1,45 @@
+/* use the transition property,  change the properties on an event like hover */
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem) rotate(-50deg); /* start in the left side */
+  }
+  
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0); /* 0 will reset and put it where it was before */
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); /* start in the right side */
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0); /* 0 will reset and put it where it was before */
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); /* start in the bottom side */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0); /* 0 will reset and put it where it was before */
+  }
+}
